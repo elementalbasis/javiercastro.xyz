@@ -1,0 +1,6 @@
+title: Javier Castro
+description: Mathematics, physics, linguistics, and independent projects.
+collections:
+  projects:
+    output: true
+markdown: kramdown
