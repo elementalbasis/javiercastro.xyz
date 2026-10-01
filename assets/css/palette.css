@@ -1,0 +1,281 @@
+:root {
+    color-scheme: light;
+
+    /* One light, one dark, one accent, one hover accent. */
+    --paper: #F3F0E8;
+    --ink: #2D2D2D;
+    --accent: #315EFB;
+    --accent-hover: #D69E2E;
+
+    /* Override the older theme variables. */
+    --background: var(--paper);
+    --surface: var(--ink);
+    --surface-hover: var(--ink);
+    --text: var(--ink);
+    --muted: var(--ink);
+
+    /* Keep Pico components in the same four-color system. */
+    --pico-background-color: var(--paper);
+    --pico-color: var(--ink);
+    --pico-muted-color: var(--ink);
+    --pico-primary: var(--accent);
+    --pico-primary-hover: var(--accent-hover);
+    --pico-primary-focus: var(--accent);
+    --pico-primary-inverse: var(--paper);
+    --pico-card-background-color: var(--paper);
+    --pico-card-sectioning-background-color: var(--paper);
+    --pico-border-color: var(--ink);
+}
+
+html,
+body {
+    background: var(--paper);
+    color: var(--ink);
+}
+
+body {
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    padding-inline: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+strong {
+    color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+    color: var(--accent);
+    text-decoration-color: currentColor;
+    text-underline-offset: .18em;
+    transition: color 150ms ease;
+}
+
+a:hover,
+a:focus {
+    color: var(--accent-hover);
+}
+
+/*
+Navigation
+*/
+
+.site-header {
+    width: 100%;
+    background: var(--ink);
+    border-bottom: 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    padding: .72rem 2rem;
+}
+
+.site-title {
+    color: var(--paper);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+}
+
+.site-title:hover,
+.site-title:focus {
+    color: var(--accent-hover);
+}
+
+nav {
+    gap: 1.75rem;
+}
+
+nav a {
+    color: var(--paper);
+    opacity: .72;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--accent-hover);
+    opacity: 1;
+}
+
+/*
+Hero
+*/
+
+.hero {
+    gap: clamp(2.5rem, 6vw, 5rem);
+    margin: clamp(3.5rem, 8vw, 6.5rem) 0;
+}
+
+.hero h1 {
+    color: var(--ink);
+    font-size: clamp(3.25rem, 8vw, 5.5rem);
+    line-height: .95;
+    letter-spacing: -.045em;
+    margin-bottom: 1rem;
+}
+
+.hero h2 {
+    color: var(--ink);
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: .02em;
+    opacity: .72;
+}
+
+.hero p {
+    color: var(--ink);
+    max-width: 38rem;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    opacity: .82;
+}
+
+.hero a {
+    color: var(--accent);
+    font-weight: 650;
+}
+
+.hero a:hover,
+.hero a:focus {
+    color: var(--accent-hover);
+}
+
+.hero-image {
+    border-radius: 1rem;
+    background: var(--paper);
+    outline: 1px solid var(--ink);
+    outline-offset: -1px;
+}
+
+/*
+Section headings
+*/
+
+main.container > h2 {
+    margin-top: 4.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--ink);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+/*
+Project cards
+*/
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.project-card,
+.post-card {
+    margin: 0;
+    padding: 1.5rem;
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    border-radius: .8rem;
+    box-shadow: none;
+    transition:
+        border-color 150ms ease,
+        transform 150ms ease;
+}
+
+.project-card:hover,
+.post-card:hover {
+    background: var(--paper);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.project-card h3,
+.post-card h3 {
+    color: var(--ink);
+    margin-bottom: .5rem;
+}
+
+.project-card p,
+.post-card p {
+    color: var(--ink);
+    opacity: .76;
+}
+
+.project-card a,
+.post-card a {
+    color: var(--accent);
+    font-weight: 650;
+}
+
+.project-card a:hover,
+.project-card a:focus,
+.post-card a:hover,
+.post-card a:focus {
+    color: var(--accent-hover);
+}
+
+/*
+Footer
+*/
+
+footer {
+    margin-top: 5rem;
+    padding: 2rem;
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    font-size: .9rem;
+}
+
+/*
+Mobile
+*/
+
+@media (max-width: 800px) {
+    .container {
+        padding-inline: 1.25rem;
+    }
+
+    .nav-container {
+        padding: .75rem 1.25rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .nav-container {
+        align-items: flex-start;
+    }
+
+    nav {
+        width: 100%;
+        gap: 1rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: .15rem;
+    }
+}
